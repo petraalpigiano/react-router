@@ -15,17 +15,22 @@ export default function PostsPage() {
       <div className="container">
         <h1>Sono la Post</h1>
         <div className="row row-cols-1 row-cols-md-3 g-4">
-          {postsList.map(function (currentCard, index) {
+          {postsList.map(function (currentCard) {
             return (
-              <div className="col" key={index}>
+              <div className="col" key={currentCard.id}>
                 <div className="card h-100">
                   <img
                     src={"http://localhost:3000" + currentCard.image}
                     className="card-img-top"
                     alt={currentCard.title}
                   />
-                  <Link to="" className="card-body link">
-                    <h5 className="card-title">{currentCard.title}</h5>
+                  <Link
+                    to={`/posts/${currentCard.id}`}
+                    className="card-body link"
+                  >
+                    <h5 className="card-title text-center">
+                      {currentCard.title}
+                    </h5>
                   </Link>
                 </div>
               </div>

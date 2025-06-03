@@ -4,6 +4,7 @@ import ContactPage from "./pages/ContactPage";
 import PostsPage from "./pages/posts/PostsPage";
 import DefaultLayout from "./layouts/DefaultLayout";
 import NotFoundPage from "./pages/NotFoundPage";
+import DetailsPostPage from "./pages/posts/DetailsPostPage";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           {/* ROTTE CON IN COMUNE IL PREFISSO  */}
           <Route path="/posts">
             <Route path="" element={<PostsPage />}></Route>
+            <Route path=":id" element={<DetailsPostPage />}></Route>
           </Route>
 
           <Route path="*" element={<NotFoundPage />}></Route>
